@@ -28,7 +28,7 @@ function updateUsername(username, newUsername){
         listUser[userIndex].username = newUsername;
         return listUser[userIndex];
     }else{
-        return "ID não encontrado!"
+        return "Username não encontrado!"
     }
 }
 
