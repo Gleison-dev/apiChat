@@ -27,8 +27,8 @@ userRoute.get("/user-findId/:id", (req, res) => {
 });
 
 userRoute.patch("/update-username", (req, res) => {
-    const { username, password, newUsername } = req.body;
-    const usernameUpdate = updateUsername(username, password, newUsername);
+    const { username, newUsername } = req.body;
+    const usernameUpdate = updateUsername(username, newUsername);
     res.json({usernameUpdate});
 });
 

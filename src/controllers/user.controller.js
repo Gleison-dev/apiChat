@@ -21,13 +21,14 @@ function getUserById(id){
     }
 }
 
-function updateUsername(username, password, newUsername){
-    let userIndex = listUser.findIndex(data => data.username === username && data.password === password);
-    if(userIndex){
+function updateUsername(username, newUsername){
+    let user = listUser.find(data => data.username === username);
+    if(user){
+        let userIndex = listUser.findIndex(data => data.username === username);
         listUser[userIndex].username = newUsername;
         return listUser[userIndex];
     }else{
-        return "Dados incorretos!"
+        return "ID não encontrado!"
     }
 }
 
