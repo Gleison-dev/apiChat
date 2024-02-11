@@ -6,6 +6,7 @@ class Message{
         this.message = message;
         this.sender = sender;
         this.receiver = receiver;
+        this.favorite = false;
         this.created_at = new Date().toUTCString();
     }
 }

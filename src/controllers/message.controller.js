@@ -41,6 +41,22 @@ function updateMessage(id, newMessage){
     }
 }
 
+function updateFavorite(id){
+    let messageId = listMessage.find(data => data.id === id);
+    if(messageId){
+        let messageIndex = listMessage.findIndex(data => data.id === id);
+        if(listMessage[messageIndex].favorite == true) {
+            listMessage[messageIndex].favorite = false;
+            return listMessage[messageIndex];
+        }else{
+            listMessage[messageIndex].favorite = true;
+            return listMessage[messageIndex];
+        }
+    }else{
+        return "ID não encontrado!"
+    }
+}
+
 function deleteMessage(id){
     let messageIndex = listMessage.findIndex(data => data.id === id);
     if(messageIndex){
@@ -51,4 +67,4 @@ function deleteMessage(id){
     }
 }
 
-export { createMessage, getAllMessages, getMessageById, getMessageBySender, updateMessage, deleteMessage }
+export { createMessage, getAllMessages, getMessageById, getMessageBySender, updateMessage, updateFavorite, deleteMessage }

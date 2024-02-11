@@ -5,6 +5,7 @@ import {
     getMessageById,
     getMessageBySender,
     updateMessage,
+    updateFavorite,
     deleteMessage
  } from "../controllers/message.controller.js";
 
@@ -38,6 +39,12 @@ messageRoute.patch("/message-update/:id", (req, res) => {
     const { newMessage } = req.body;
     const messageUpdate = updateMessage(id, newMessage);
     res.json({messageUpdate});
+});
+
+messageRoute.patch("/favorite-update/:id", (req, res) => {
+    const id = req.params.id;
+    const favoriteUpdate = updateFavorite(id);
+    res.json({favoriteUpdate});
 });
 
 messageRoute.delete("/delete-message/:id", (req, res) => {
